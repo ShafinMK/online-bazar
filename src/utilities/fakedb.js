@@ -3,7 +3,7 @@ const addToDb = id =>{
     let shoppingCart = {};
 
     //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+    const storedCart = getDb();
     if(storedCart){
         shoppingCart = JSON.parse(storedCart);
     }
@@ -18,6 +18,13 @@ const addToDb = id =>{
         shoppingCart[id] = 1;
     }
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+}
+
+// get data from local storage
+const getDb = () => localStorage.getItem('shopping-cart');
+const getStoredCart = () => {
+    const exists = getDb();
+    return exists ? JSON.parse(exists) : {};
 }
 
 const removeFromDb = id =>{
@@ -36,7 +43,8 @@ const deleteShoppingCart = () =>{
 }
 
 export {
-    addToDb, 
+    addToDb,
+    getStoredCart, 
     removeFromDb,
     deleteShoppingCart
 }
