@@ -2,3 +2,7 @@
     background-color: #36013F;
     color: white;
 }
+.product-body{
+    height: 220px;
+    /* border: 1px solid black; */
+}

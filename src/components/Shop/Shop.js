@@ -54,13 +54,13 @@ const Shop = () => {
         <div className='container border'>
             <input onChange={handleSearch} type="text" className='form-control my-5' placeholder='Search Products' name="" id="" />
             <div className="row">
-                <div className="col-lg-8 items-container overflow-auto">
+                <div className="col-lg-8 col-md-7 col-sm-12 items-container overflow-auto">
                     {
                         displayProducts.map(product => <Product key={product.id} handleAddtoCart={handleAddtoCart} product={product}></Product>)
 
                     }
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-5 col-sm-12">
                     <Cart cart={cart}></Cart>
                 </div>
             </div>

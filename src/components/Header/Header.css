@@ -1,3 +1,9 @@
-a:hover {
+
+.nav-link{
+    color: white;
+    font-weight: 700;
+
+}
+.nav-link:hover{
     background-color: gray;
 }

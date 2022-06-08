@@ -8,17 +8,18 @@ const Product = (props) => {
     const element = <FontAwesomeIcon icon={faCartArrowDown} />
 
     return (
-        <div>
+        <div className='p-3'>
 
-            <div className="row mt-5 shadow rounded">
+            <div className="row  mt-5 shadow rounded">
                 <div className="col-lg-4 p-0">
                     <img src={img} className='img-fluid' alt="" />
                 </div>
                 <div className="col-lg-8">
-                    <h1 className=''>{name}</h1>
+                    <div className='product-body'>
+                    <h3 className=''>{name}</h3>
                     <h6>by: {seller}</h6>
                     <h4>${price}</h4>
-                    <p className='mt-5'><small>Only {stock} items left</small></p>
+                    <p className='mt-3'><small>Only {stock} items left</small></p>
                     <div className="row">
                         <div className="col-6"><Rating emptySymbol="fa fa-regular fa-star" fullSymbol="fa fa-solid fa-star" initialRating={ratings} readonly></Rating></div>
                         <div className="col-6 d-flex justify-content-center align-items-center">
@@ -26,7 +27,8 @@ const Product = (props) => {
                         </div>
                     </div>
                     <br />
-                    <button onClick={() => props.handleAddtoCart(props.product)} className='btn cart-btn btn-light' type="button">{element}Add to cart</button>
+                    </div>
+                    <button onClick={() => props.handleAddtoCart(props.product)} className='btn cart-btn btn-light my-2' type="button">{element}Add to cart</button>
                 </div>
             </div>
         </div>
